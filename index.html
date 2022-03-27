@@ -42,17 +42,16 @@ Webiste: CD Thesis website
 <body>
     <div style="width:100%;height:100%">
         <!-- title -->
-        <div  id="cloud">
+        <div id="cloud">
             <div class="row">
                 <div class="col-12 mx-12">
                     <div id="title" class="text-center">
-                        <span id="title-top" class="font-weight-bold">MSCD Thesis</span>
+                        <span id="title-top" class="font-weight-bold">MSCD Thesis Project</span>
                         <br>
                         <span id="title-bot">Joshua Cao | Carnegie Mellon University</span>
                     </div>
                 </div>
             </div>
-            <br><br>
             <!-- navigation -->
             <ul id="navigation" class="nav nav-tabs font-weight-bold text-center" role="tablist">
                 <li class="nav-item">
@@ -84,28 +83,91 @@ Webiste: CD Thesis website
             <div class="tab-pane fade active show" id="a1" role="tabpanel" aria-labelledby="a1-tab">
                 <div class="row">
                     <div class="col-12 my-5 mx-3">
-                        <h1>Paper Reading</h1>
+                        <h1>Paper Reading</h1> 
+                        <span class="tag tag-CG">CG</span> <span class="tag tag-DL">DL</span> <span class="tag tag-CV">CV</span> <span class="tag tag-HCI">HCI</span> <span class="tag tag-ALL">ALL</span>
                         <hr class="col-xs-12 mr-4">
-                        <h3>Computer Graphics</h3>
-                        <p class="col-xs-12 mr-4">
-                            [1]
-                        </p>
-                        <hr class="col-xs-12 mr-4">
-                        <h3>Computer Vision</h3>
-                        <p class="col-xs-12 mr-4">
-                            [1]
-                        </p>
-                        <hr class="col-xs-12 mr-4">
-                        <h3>Deep Learning</h3>
-                        <p class="col-xs-12 mr-4">
-                            [1]
-                        </p>
-                        <hr class="col-xs-12 mr-4">
-                        <h3>Design/HCI</h3>
-                        <p class="col-xs-12 mr-4">
-                            [1]
-                        </p>
-                        <hr class="col-xs-12 mr-4">
+                        <div class="CG DL">
+                            <h2><a class="underline" href="https://time-travel-rephotography.github.io/">Time-Travel Rephotography</a></h2>
+                            <p class="col-xs-12 mr-4">CG DL</p>
+                            <p class="col-xs-12 mr-4">
+                                <b>Abstract:</b> Many historical people were only ever captured by old, faded, black and white photos, that are distorted due to the limitations of early cameras and the passage of time. This paper simulates traveling back in time with a modern camera to rephotograph famous subjects. Unlike conventional image restoration filters which apply independent operations like denoising, colorization, and superresolution, we leverage the StyleGAN2 framework to project old photos into the space of modern high-resolution photos, achieving all of these effects in a unified framework. A unique challenge with this approach is retaining the identity and pose of the subject in the original photo, while discarding the many artifacts frequently seen in low-quality antique photos. Our comparisons to current state-of-the-art restoration filters show significant improvements and compelling results for a variety of important historical people.
+                            </p>
+                            <p class="col-xs-12 mr-4">
+                                <b>Annotations: </b> The output of this work is stunning. It mainly uses color transfer and contextual loss to bring similar color from the dataset to align to targe image, and use the reconstruction loss to maintain the orignal facial feature so that the generated image still looks like themselves.
+                            </p>
+                            <div class="row mr-2">
+                                <div class="text-center col-12">
+                                    <img src="./media/papers/historical_wiki_face_dataset_thumbnails.jpeg" height="200px" alt="image_left">
+                                    <img src="./media/papers/showcase_thumbnails.jpeg" height="200px" alt="image_left">
+                                    <img src="./media/papers/stylegan2-new.jpg" height="400px" alt="image_left">
+                                </div>
+                            </div>
+                            <hr class="col-xs-12 mr-4">
+                        </div>
+                        <div class="CV DL">
+                            <h2><a class="underline" href="https://arxiv.org/abs/1711.00937">VQ-VAE</a></h2>
+                            <p class="col-xs-12 mr-4">CV DL</p>
+                            <p class="col-xs-12 mr-4">
+                                <b>Abstract:</b> the Vector Quantised-Variational AutoEncoder (VQ-VAE), differs from VAEs in two key ways: the encoder network outputs discrete, rather than continuous, codes; and the prior is learnt rather than static. In order to learn a discrete latent representation, we incorporate ideas from vector quantisation (VQ). Using the VQ method allows the model to circumvent issues of "posterior collapse" -- where the latents are ignored when they are paired with a powerful autoregressive decoder -- typically observed in the VAE framework. Pairing these representations with an autoregressive prior, the model can generate high quality images, videos, and speech as well as doing high quality speaker conversion and unsupervised learning of phonemes, providing further evidence of the utility of the learnt representations.
+                            </p>
+                            <p class="col-xs-12 mr-4">
+                                <b>Annotations:</b> The embedding space is a highlight of VQ-VAE, it enables discrete latent variable, and it works as a dictionary after properly trained, it encourage the output of encoder to stay close to the chosen codebook vector to prevent it from fluctuating too frequently from one code vector to another.
+                            </p>
+                            <div class="row mr-2">
+                                <div class="text-center col-12">
+                                    <img src="./media/papers/vq-vae.jpg" height="400px" alt="image_left">
+                                </div>
+                            </div>
+                            <hr class="col-xs-12 mr-4">
+                        </div>
+                        <div class="CV DL">
+                            <h2><a class="underline" href="https://arxiv.org/abs/1906.00446">VQ-VAE2</a></h2>
+                            <p class="col-xs-12 mr-4">CV DL</p>
+                            <p class="col-xs-12 mr-4">
+                                <b>Abstract:</b> we scale and enhance the autoregressive priors used in VQ-VAE to generate synthetic samples of much higher coherence and fidelity than possible before. We use simple feed-forward encoder and decoder networks, making our model an attractive candidate for applications where the encoding and/or decoding speed is critical. Additionally, VQ-VAE requires sampling an autoregressive model only in the compressed latent space, which is an order of magnitude faster than sampling in the pixel space, especially for large images. We demonstrate that a multi-scale hierarchical organization of VQ-VAE, augmented with powerful priors over the latent codes, is able to generate samples with quality that rivals that of state of the art Generative Adversarial Networks on multifaceted datasets such as ImageNet, while not suffering from GAN's known shortcomings such as mode collapse and lack of diversity.
+                            </p>
+                            <p class="col-xs-12 mr-4">
+                                <b>Annotations:</b> VQ-VAE2 has two encoders, one is 32x32 top layer to encode the global consistency feature, and one is 64x64 bottom layer to encode the local detailed feature. In this way, the auto-encoder can keep high fidelity and add diversity at the same time.
+                            </p>
+                            <div class="row mr-2">
+                                <div class="text-center col-12">
+                                    <img src="./media/papers/vq-vae2.jpg" height="600px" alt="image_left">
+                                </div>
+                            </div>
+                            <hr class="col-xs-12 mr-4">
+                        </div>
+                        <div class="CV DL CG">
+                            <h2><a class="underline" href="https://arxiv.org/abs/1511.06434">DC-GAN</a></h2>
+                            <p class="col-xs-12 mr-4">CV CG DL</p>
+                            <p class="col-xs-12 mr-4">
+                                <b>Abstract:</b> we scale and enhance the autoregressive priors used in VQ-VAE to generate synthetic samples of much higher coherence and fidelity than possible before. We use simple feed-forward encoder and decoder networks, making our model an attractive candidate for applications where the encoding and/or decoding speed is critical. Additionally, VQ-VAE requires sampling an autoregressive model only in the compressed latent space, which is an order of magnitude faster than sampling in the pixel space, especially for large images. We demonstrate that a multi-scale hierarchical organization of VQ-VAE, augmented with powerful priors over the latent codes, is able to generate samples with quality that rivals that of state of the art Generative Adversarial Networks on multifaceted datasets such as ImageNet, while not suffering from GAN's known shortcomings such as mode collapse and lack of diversity.
+                            </p>
+                            <p class="col-xs-12 mr-4">
+                                <b>Annotations:</b> VQ-VAE2 has two encoders, one is 32x32 top layer to encode the global consistency feature, and one is 64x64 bottom layer to encode the local detailed feature. In this way, the auto-encoder can keep high fidelity and add diversity at the same time.
+                            </p>
+                            <div class="row mr-2">
+                                <div class="text-center col-12">
+                                    <img src="./media/papers/vq-vae2.jpg" height="600px" alt="image_left">
+                                </div>
+                            </div>
+                            <hr class="col-xs-12 mr-4">
+                        </div>
+                        <div class="CV DL CG">
+                            <h2><a class="underline" href="https://arxiv.org/abs/1703.10593">CycleGAN</a></h2>
+                            <p class="col-xs-12 mr-4">CV CG DL</p>
+                            <p class="col-xs-12 mr-4">
+                                <b>Abstract:</b> Image-to-image translation is a class of vision and graphics problems where the goal is to learn the mapping between an input image and an output image using a training set of aligned image pairs. However, for many tasks, paired training data will not be available. We present an approach for learning to translate an image from a source domain X to a target domain Y in the absence of paired examples. Our goal is to learn a mapping G:X→Y such that the distribution of images from G(X) is indistinguishable from the distribution Y using an adversarial loss. Because this mapping is highly under-constrained, we couple it with an inverse mapping F:Y→X and introduce a cycle consistency loss to push F(G(X))≈X (and vice versa). Qualitative results are presented on several tasks where paired training data does not exist, including collection style transfer, object transfiguration, season transfer, photo enhancement, etc. Quantitative comparisons against several prior methods demonstrate the superiority of our approach.
+                            </p>
+                            <p class="col-xs-12 mr-4">
+                                <b>Annotations:</b> A major innovation in CycleGAN is that the input of generator is an image instead of noise, and there are two generator that are trained at the same time, and the cycle-consistency loss is the core algortihm that captures the intuition that if we translate form one domain to the other and back again, we should arrvie at where we started.
+                            </p>
+                            <div class="row mr-2">
+                                <div class="text-center col-12">
+                                    <img src="./media/papers/cycleGan.jpg" height="600px" alt="image_left">
+                                </div>
+                            </div>
+                            <hr class="col-xs-12 mr-4">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -116,4 +178,3 @@ Webiste: CD Thesis website
 </body>
 
 </html>
-

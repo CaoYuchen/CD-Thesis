@@ -63,6 +63,14 @@ p {
 	text-align: justify;
 }
 
+.tag {
+    font-size: 20px;
+    text-align: justify;
+    color: #1e5bc6d9;
+    cursor: pointer;
+    margin-right: 8px;
+}
+
 .small-font{
 	font-size: 15px;
 	text-align: justify;
